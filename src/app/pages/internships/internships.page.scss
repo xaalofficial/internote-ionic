@@ -1,0 +1,177 @@
+.content {
+  background: #F5F7F8;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #F5F7F8;
+  padding: 10px 20px;
+  color: #379777;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #379777;
+}
+
+.container {
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.searchbar {
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  width: 100%;
+  font-size: 16px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.filter-item {
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-select {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #379777;
+}
+
+.results-count {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 12px 0;
+}
+
+.internship-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+
+.internship-item {
+  background: #ffffff;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.internship-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.internship-label {
+  flex: 1;
+}
+
+.internship-label h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 4px 0;
+}
+
+.internship-label h3 {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 4px 0;
+}
+
+.internship-label p {
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+}
+
+.badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-medium {
+  background-color: #92949c;
+  color: white;
+}
+
+.badge-primary {
+  background-color: #3880ff;
+  color: white;
+}
+
+.badge-success {
+  background-color: #2dd36f;
+  color: white;
+}
+
+.badge-danger {
+  background-color: #eb445a;
+  color: white;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-top: 16px;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+  margin: 0;
+}

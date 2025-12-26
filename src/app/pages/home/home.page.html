@@ -1,0 +1,150 @@
+<div class="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+  <div class="bg-white/80 backdrop-blur-sm px-5 py-4 shadow-sm sticky top-0 z-10">
+    <div class="flex items-center justify-between max-w-7xl mx-auto">
+      <h1 class="text-3xl font-black bg-gradient-to-r from-primary to-emerald-600 bg-clip-text text-transparent">
+        Internote
+      </h1>
+    </div>
+  </div>
+
+  <div class="px-4 py-6 max-w-7xl mx-auto">
+    <!-- Hero Section -->
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-2">Dashboard Overview</h2>
+      <p class="text-gray-600">Track your internship applications at a glance</p>
+    </div>
+    
+    <!-- Stats  -->
+    <div class="grid grid-cols-2 lg:grid-cols-5 gap-4 mb-10">
+      <!-- Total -->
+      <div class="relative overflow-hidden bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100">
+        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+        <div class="relative">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mb-3 shadow-md">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold text-gray-800 mb-1">{{ stats.total }}</h3>
+          <p class="text-sm text-gray-600 font-medium">Total</p>
+        </div>
+      </div>
+
+      <!-- Not Applied -->
+      <div class="relative overflow-hidden bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100">
+        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-gray-400 to-gray-600 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+        <div class="relative">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-gray-400 to-gray-600 flex items-center justify-center mb-3 shadow-md">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold text-gray-800 mb-1">{{ stats.notApplied }}</h3>
+          <p class="text-sm text-gray-600 font-medium">Pending</p>
+        </div>
+      </div>
+
+      <!-- Applied -->
+      <div class="relative overflow-hidden bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100">
+        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+        <div class="relative">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-orange-600 flex items-center justify-center mb-3 shadow-md">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold text-gray-800 mb-1">{{ stats.applied }}</h3>
+          <p class="text-sm text-gray-600 font-medium">Applied</p>
+        </div>
+      </div>
+
+      <!-- Offers -->
+      <div class="relative overflow-hidden bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100">
+        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+        <div class="relative">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center mb-3 shadow-md">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold text-gray-800 mb-1">{{ stats.offers }}</h3>
+          <p class="text-sm text-gray-600 font-medium">Offers</p>
+        </div>
+      </div>
+
+      <!-- Rejected -->
+      <div class="relative overflow-hidden bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer group border border-gray-100">
+        <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-red-400 to-red-600 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+        <div class="relative">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-400 to-red-600 flex items-center justify-center mb-3 shadow-md">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-3xl font-bold text-gray-800 mb-1">{{ stats.rejected }}</h3>
+          <p class="text-sm text-gray-600 font-medium">Rejected</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Applications -->
+    <div class="mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-2xl font-bold text-gray-800">Recent Applications</h2>
+        <span class="text-sm text-gray-500">Last 5 entries</span>
+      </div>
+    </div>
+    
+    <div *ngIf="recentInternships.length > 0" class="space-y-3">
+      <div *ngFor="let internship of recentInternships" 
+           (click)="viewDetails(internship)"
+           class="bg-white rounded-xl p-4 shadow-md hover:shadow-xl transition-all duration-200 cursor-pointer border border-gray-100 group">
+        <div class="flex justify-between items-start gap-3">
+          <div class="flex-1 min-w-0">
+            <div class="flex items-start gap-3 mb-2">
+              <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-emerald-600 flex items-center justify-center flex-shrink-0 shadow-sm">
+                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-base font-bold text-gray-900 mb-0.5 truncate group-hover:text-primary transition-colors">
+                  {{ internship.position }}
+                </h3>
+                <p class="text-sm text-gray-600 truncate">{{ internship.company_name }}</p>
+              </div>
+            </div>
+          </div>
+          <span class="px-3 py-1.5 rounded-lg text-xs font-bold uppercase shadow-sm flex-shrink-0"
+                [ngClass]="{
+                  'bg-gray-100 text-gray-700': internship.status === 'not_applied',
+                  'bg-orange-100 text-orange-700': internship.status === 'applied',
+                  'bg-green-100 text-green-700': internship.status === 'offer',
+                  'bg-red-100 text-red-700': internship.status === 'rejected'
+                }">
+            {{ getStatusLabel(internship.status) }}
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="recentInternships.length === 0" 
+         class="bg-white rounded-2xl shadow-lg text-center py-16 px-5 border border-gray-100">
+      <div class="w-20 h-20 rounded-full bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center mx-auto mb-4">
+        <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+        </svg>
+      </div>
+      <h3 class="text-lg font-semibold text-gray-800 mb-2">No internships yet</h3>
+      <p class="text-gray-500 mb-6">Start tracking your applications by adding your first internship</p>
+      <button
+      routerLink="/tabs/add"
+      class="px-6 py-3 bg-gradient-to-r from-primary to-emerald-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all"
+    >
+      Add Your First Internship
+    </button>
+    
+    </div>
+  </div>
+</div>

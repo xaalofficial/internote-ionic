@@ -1,0 +1,258 @@
+<div class="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+  <!-- Header -->
+  <header class="bg-white/80 backdrop-blur-sm px-5 py-4 border-b border-gray-200 sticky top-0 z-10">
+    <div class="flex items-center gap-4 max-w-4xl mx-auto">
+      <button 
+        (click)="cancel()"
+        class="w-10 h-10 flex items-center justify-center rounded-xl bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+      </button>
+      <h1 class="flex-1 text-center text-xl font-bold text-gray-800">{{ isEditMode ? 'Edit' : 'Add' }} Internship</h1>
+      <div class="w-10"></div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="px-4 py-4 max-w-3xl mx-auto pb-24">
+    <form (ngSubmit)="onSubmit()">
+      <div class="space-y-3">
+        <!-- Company Name -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Company Name *</label>
+          <input 
+            type="text"
+            [(ngModel)]="internship.company_name"
+            name="company_name"
+            required
+            placeholder="Enter company name"
+            class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+        </div>
+
+        <!-- Position -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Position *</label>
+          <input 
+            type="text"
+            [(ngModel)]="internship.position"
+            name="position"
+            required
+            placeholder="Enter position title"
+            class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+        </div>
+
+        <!-- Industry -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Industry</label>
+          <div class="relative">
+            <select 
+              [(ngModel)]="internship.industry"
+              name="industry"
+              class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 font-medium transition-all appearance-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-10 cursor-pointer">
+              <option value="Technology" selected>Technology</option>
+              <option value="Finance">Finance</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="E-commerce">E-commerce</option>
+              <option value="Consulting">Consulting</option>
+              <option value="Education">Education</option>
+              <option value="Other">Other</option>
+            </select>
+            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Company Size -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Company Size</label>
+          <div class="relative">
+            <select 
+              [(ngModel)]="internship.company_size"
+              name="company_size"
+              class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 font-medium transition-all appearance-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-10 cursor-pointer">
+              <option value="startup">Startup (1-50)</option>
+              <option value="small">Small (51-200)</option>
+              <option value="medium">Medium (201-1000)</option>
+              <option value="large">Large (1001-5000)</option>
+              <option value="enterprise">Enterprise (5001+)</option>
+            </select>
+            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Tech Stack</label>
+          <input 
+            type="text"
+            [(ngModel)]="internship.tech_stack"
+            name="tech_stack"
+            placeholder="e.g., React, Node.js, PostgreSQL"
+            class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+        </div>
+
+        <!-- Location Section -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-3">Location</label>
+          <div class="grid grid-cols-2 gap-3">
+            <!-- Country -->
+            <div>
+              <label class="block text-xs font-medium text-gray-600 mb-1.5">Country</label>
+              <input 
+                type="text"
+                [(ngModel)]="internship.country"
+                name="country"
+                placeholder="e.g., Morocco"
+                class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+            </div>
+            
+            <!-- City -->
+            <div>
+              <label class="block text-xs font-medium text-gray-600 mb-1.5">City</label>
+              <input 
+                type="text"
+                [(ngModel)]="internship.city"
+                name="city"
+                placeholder="e.g., Oujda"
+                class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+            </div>
+          </div>
+        </div>
+
+        <!-- Work Mode -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Work Mode</label>
+          <div class="relative">
+            <select 
+              [(ngModel)]="internship.work_mode"
+              name="work_mode"
+              class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 font-medium transition-all appearance-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-10 cursor-pointer">
+              <option value="remote">Remote</option>
+              <option value="onsite">Onsite</option>
+              <option value="hybrid">Hybrid</option>
+            </select>
+            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Application Date -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Application Date</label>
+          <input 
+            type="date"
+            [(ngModel)]="internship.application_date"
+            name="application_date"
+            class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+        </div>
+
+        <!-- Application Method -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Application Method</label>
+          <div class="relative">
+            <select 
+              [(ngModel)]="internship.application_method"
+              name="application_method"
+              class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 font-medium transition-all appearance-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-10 cursor-pointer">
+              <option value="email">Email</option>
+              <option value="form">Online Form</option>
+              <option value="link">Link/Platform</option>
+            </select>
+            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Application Reference -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Application Reference</label>
+          <input 
+            type="text"
+            [(ngModel)]="internship.application_reference"
+            name="application_reference"
+            placeholder="Email address, form URL, or platform link"
+            class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+        </div>
+
+        <!-- Status (Edit Mode Only) -->
+        <div *ngIf="isEditMode" class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Status</label>
+          <div class="relative">
+            <select 
+              [(ngModel)]="internship.status"
+              name="status"
+              class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 font-medium transition-all appearance-none focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent pr-10 cursor-pointer">
+              <option value="not_applied">Not Applied</option>
+              <option value="applied">Applied</option>
+              <option value="offer">Offer</option>
+              <option value="rejected">Rejected</option>
+            </select>
+            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-600 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Resume Version -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Resume Version</label>
+          <input 
+            type="text"
+            [(ngModel)]="internship.resume_version"
+            name="resume_version"
+            placeholder="e.g., v1.2, General, Tech-focused"
+            class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+        </div>
+
+        <!-- Motivation Letter Version -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Motivation Letter Version</label>
+          <input 
+            type="text"
+            [(ngModel)]="internship.motivation_version"
+            name="motivation_version"
+            placeholder="e.g., v1.0, Standard, Custom"
+            class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+        </div>
+
+        <!-- Notes -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4">
+          <label class="block text-sm font-bold text-gray-700 mb-2">Notes</label>
+          <textarea 
+            [(ngModel)]="internship.notes"
+            name="notes"
+            rows="4"
+            placeholder="Additional notes about this application"
+            class="w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-base text-gray-900 transition-all resize-y min-h-[100px] focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+        </div>
+      </div>
+
+      <!-- Button Group -->
+      <div class="mt-6 flex flex-col gap-3 pb-4">
+        <button 
+          type="submit" 
+          class="w-full px-6 py-4 rounded-xl text-base font-bold bg-gradient-to-r from-primary to-emerald-600 text-white hover:shadow-xl transition-all flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+          </svg>
+          {{ isEditMode ? 'Update' : 'Create' }} Internship
+        </button>
+        <button 
+          type="button" 
+          (click)="cancel()"
+          class="w-full px-6 py-4 rounded-xl text-base font-semibold bg-white border-2 border-gray-200 text-gray-700 hover:bg-gray-50 transition-all flex items-center justify-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

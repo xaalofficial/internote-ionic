@@ -1,0 +1,7 @@
+{
+  "name": "internote",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
