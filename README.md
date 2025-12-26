@@ -1,6 +1,6 @@
 # Internote
 
-An Ionic + Angular 17 app for tracking internship applications. Built as a class project to solve a real problem - managing multiple internship applications as a final-year student.
+An Ionic + Angular 17 app for tracking internship applications. (video: internote-demo.mp4)
 
 ## Tech Stack
 
