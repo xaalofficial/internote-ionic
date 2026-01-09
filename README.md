@@ -11,7 +11,7 @@ An Ionic + Angular 17 app for tracking internship applications. (video: internot
 
 ### 1. Install dependencies
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/xaalofficial/internote-ionic>
 cd internote
 npm install
 ```
